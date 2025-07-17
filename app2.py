@@ -71,7 +71,7 @@ for name, cid in ALL_COUNTRIES.items():
         summary_rows.append({
             'Country': name,
             'Citizens': (df_tmp['active'] == True).sum(),
-            'Eco': fmt_num(int(df_tmp['wealthValue'].sum())),
+            'Eco': df_tmp['primaryRole'].isin(['Trabajador','Super Trabajador','Empresario','Super Empresario']).sum(),
             'Soldiers': df_tmp['primaryRole'].isin(['Soldado','Super Soldado']).sum(),
             'Buffed': (df_tmp['Current Condition']=='Buffed').sum(),
             'Debuffed': (df_tmp['Current Condition']=='Debuff').sum(),
