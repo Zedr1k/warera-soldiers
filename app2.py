@@ -68,9 +68,10 @@ summary_rows = []
 for name, cid in ALL_COUNTRIES.items():
     try:
         df_tmp, _ = load_country_df(cid)
+        df_tmp = df_tmp[df_tmp.get('active', False) & (df_tmp.get('level', 0) >= 5)]
         summary_rows.append({
             'Country': name,
-            'Citizens': (df_tmp['active'] == True).sum(),
+            'Citizens': len(df_tmp),
             'Eco': df_tmp['primaryRole'].isin(['Trabajador','Super Trabajador','Empresario','Super Empresario']).sum(),
             'Soldiers': df_tmp['primaryRole'].isin(['Soldado','Super Soldado']).sum(),
             'Buffed': (df_tmp['Current Condition']=='Buffed').sum(),
@@ -96,7 +97,7 @@ st.subheader(f"Last updated: {last_updated:%Y-%m-%d %H:%M UTC}")
 # Prepare table: drop skill columns
 columns_to_keep = [
     'username','level',
-    'active','Current Condition','Tiempo restante',
+    'Current Condition','Tiempo restante',
     'wealthValue','damageValue',
     'calculated_damage', 'primaryRole','secondaryRoles'
 ]
