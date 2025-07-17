@@ -91,8 +91,24 @@ st.dataframe(summary_df, use_container_width=True)
 st.title(f"📊 {selected} Dashboard")
 cid = ALL_COUNTRIES[selected]
 df, last_updated = load_country_df(cid)
-st.subheader(f"Last updated: {last_updated:%Y-%m-%d %H:%M UTC}")
+df = df[df['active'] & (df['level'] >= 5)]
 
+#Relative time to last update
+now = datetime.utcnow()
+delta = now - last_updated
+days = delta.days
+hours = delta.seconds // 3600
+minutes = (delta.seconds % 3600) // 60
+parts = []
+if days:
+    parts.append(f"{days} día{'s' if days>1 else ''}")
+if hours:
+    parts.append(f"{hours} hora{'s' if hours>1 else ''}")
+if minutes and not days:
+    parts.append(f"{minutes} minuto{'s' if minutes>1 else ''}")
+rel_time = ' y '.join(parts) if parts else '0 minutos'
+
+st.subheader(f"Hace {rel_time}")
 
 # Prepare table: drop skill columns
 columns_to_keep = [
