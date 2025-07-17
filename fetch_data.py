@@ -66,7 +66,6 @@ def fetch_all_user_ids(country_id):
         cursor = data.get("nextCursor")
         if not cursor:
             break
-        time.sleep(0.2)
     return user_ids
 
 def fetch_user_record(user_id):
@@ -197,7 +196,6 @@ def main():
             f" | food={rec['food_used']:.1f} | attacks={rec['total_attacks']:.1f} | status={status}"
         )
         records.append(rec)
-        time.sleep(0.1)
 
     df = pd.DataFrame(records)
     df.to_csv(OUTPUT_CSV, index=False)
