@@ -49,7 +49,8 @@ ALL_COUNTRIES = {
     "Alemania": "6813b6d446e731854c7ac79c",
     "Saudi Arabia": "6813b6d546e731854c7ac8cb",
     "Iraq": "683ddd2c24b5a2e114af15c3",
-    "Portugal": "6813b6d446e731854c7ac7aa"        
+    "Portugal": "6813b6d446e731854c7ac7aa",
+    "Guinea": "6873d0ea1758b40e712b5f2b"
 }
 
 # Inicializar estado de actualización por país
