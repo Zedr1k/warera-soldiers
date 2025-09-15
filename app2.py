@@ -50,7 +50,9 @@ ALL_COUNTRIES = {
     "Saudi Arabia": "6813b6d546e731854c7ac8cb",
     "Iraq": "683ddd2c24b5a2e114af15c3",
     "Portugal": "6813b6d446e731854c7ac7aa",
-    "Guinea": "6873d0ea1758b40e712b5f2b"
+    "Peru": "6813b6d546e731854c7ac83f",
+    "Brasil": "6813b6d546e731854c7ac82f",
+    "Mexico": "6813b6d446e731854c7ac7f8"
 }
 
 # Inicializar estado de actualización por país
@@ -396,5 +398,6 @@ with tab_dashboard:
             st.info("No hay ciudadanos con buff o debuff activo actualmente")
     else:
         st.warning("Datos de buff/debuff no disponibles")
+
 
 
