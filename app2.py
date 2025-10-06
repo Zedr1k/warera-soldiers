@@ -298,7 +298,7 @@ with tab_dashboard:
                 # Evento de entrada en debuff
                 events.append((buff_time_left, damage, f"{row['username']} entra en debuff"))
                 # Evento de salida del debuff (24 horas después)
-                events.append((buff_time_left + 24, -damage, f"{row['username']} sale de debuff"))
+                events.append((buff_time_left + 16, -damage, f"{row['username']} sale de debuff"))
             
             # Ordenar eventos por tiempo
             events.sort(key=lambda x: x[0])
@@ -398,6 +398,7 @@ with tab_dashboard:
             st.info("No hay ciudadanos con buff o debuff activo actualmente")
     else:
         st.warning("Datos de buff/debuff no disponibles")
+
 
 
 
