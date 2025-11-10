@@ -42,6 +42,7 @@ ALL_COUNTRIES = {
     "Venezuela": "6813b6d546e731854c7ac858",
     "Japón": "6813b6d546e731854c7ac81d",
     "España": "6813b6d446e731854c7ac7a8",
+    "Sudafrica": "683ddd2c24b5a2e114af1612",
     "Rumania": "6813b6d446e731854c7ac7b6",
     "Suecia": "6813b6d446e731854c7ac7f2",
     "Francia": "6813b6d446e731854c7ac79a",
@@ -398,6 +399,7 @@ with tab_dashboard:
             st.info("No hay ciudadanos con buff o debuff activo actualmente")
     else:
         st.warning("Datos de buff/debuff no disponibles")
+
 
 
 
